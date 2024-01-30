@@ -11,7 +11,7 @@ const { default: mongoose } = require("mongoose");
 */
 const dbConnect = () => {
     try {
-        const conn = mongoose.connect("mongodb://localhost:27017/mydb");//add your local database - mongodb://localhost:27017
+        const conn = mongoose.connect(process.env.MOGODB_URL); //add your local database - mongodb://localhost:27017
         console.log("Database Connected Successfully");
     } catch (error) {
         console.log("Database Error");
